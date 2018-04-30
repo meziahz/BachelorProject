@@ -1,0 +1,34 @@
+info = audiodevinfo;
+
+recObj = audiorecorder(8000,8,3);
+
+%recObj = audirecorder with properties:
+
+%Samplerate: 8000
+%BitsPerSample: 8
+%NumberOfChannels: 3
+%DeviceID: -1
+%CurrentSample: 1
+%TotalSamples: 0
+%Running: 'off'
+%StartFcn: []
+%StopFcn: []
+%TimerFcn: []
+%TimerPeriod: 0.0500
+%Tag: ' '
+%UserData: []
+%Type: 'audiorecorder'
+
+disp('start recording')
+recordblocking(recObj, 1)
+disp('Stop recording')
+
+getaudidata(recObj);
+
+play(recObj);
+
+y = getaudiodata (recObj);
+
+plot(y);
+
+
