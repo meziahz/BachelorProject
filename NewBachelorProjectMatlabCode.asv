@@ -13,7 +13,7 @@ recordingTime = 2; % s
 
 % initialise the recording object
 
-s = daq.createSession('session');
+daq.create
 
 
 recorder1 = audiorecorder(samplingFreq, bitsPerSample, nChannels, ...

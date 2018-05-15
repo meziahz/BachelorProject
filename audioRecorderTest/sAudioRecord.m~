@@ -1,0 +1,18 @@
+clear
+clc
+close all
+
+% setup
+samplingFreq = 8000; % Hz
+bitsPerSample = 16;
+nChannels = 1;
+deviceId = 0; % use audiodevinfo to find a relavant one
+timerPeriod = 0.5; % s
+recordingTime = 10; % s
+
+% initialise the recording object
+AudioRecObj = audiorecorder(samplingFreq, bitsPerSample, nChannels, ...
+    deviceId);
+AudioRecObj.set('TimerPeriod', timerPeriod, 'TimerFnc', {@processData});
+% record some data
+record(AudioRecObj, )
